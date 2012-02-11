@@ -16,6 +16,8 @@
 		707CB97614E58257004431B2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 707CB97514E58257004431B2 /* ViewController.m */; };
 		707CB97914E58257004431B2 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 707CB97714E58257004431B2 /* ViewController.xib */; };
 		707CB98114E58285004431B2 /* OWTapTempoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 707CB98014E58285004431B2 /* OWTapTempoViewController.m */; };
+		707CB99014E67D71004431B2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 707CB98F14E67D71004431B2 /* AudioToolbox.framework */; };
+		707CB99714E67FFB004431B2 /* CB.caf in Resources */ = {isa = PBXBuildFile; fileRef = 707CB99614E67FFB004431B2 /* CB.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		707CB97814E58257004431B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		707CB97F14E58285004431B2 /* OWTapTempoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OWTapTempoViewController.h; path = ../../OWTapTempoViewController/OWTapTempoViewController.h; sourceTree = "<group>"; };
 		707CB98014E58285004431B2 /* OWTapTempoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OWTapTempoViewController.m; path = ../../OWTapTempoViewController/OWTapTempoViewController.m; sourceTree = "<group>"; };
+		707CB98F14E67D71004431B2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		707CB99614E67FFB004431B2 /* CB.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CB.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				707CB99014E67D71004431B2 /* AudioToolbox.framework in Frameworks */,
 				707CB96314E58257004431B2 /* UIKit.framework in Frameworks */,
 				707CB96514E58257004431B2 /* Foundation.framework in Frameworks */,
 				707CB96714E58257004431B2 /* CoreGraphics.framework in Frameworks */,
@@ -70,6 +75,7 @@
 		707CB96114E58257004431B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				707CB98F14E67D71004431B2 /* AudioToolbox.framework */,
 				707CB96214E58257004431B2 /* UIKit.framework */,
 				707CB96414E58257004431B2 /* Foundation.framework */,
 				707CB96614E58257004431B2 /* CoreGraphics.framework */,
@@ -80,6 +86,7 @@
 		707CB96814E58257004431B2 /* OWTapTempoViewControllerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				707CB99614E67FFB004431B2 /* CB.caf */,
 				707CB97114E58257004431B2 /* AppDelegate.h */,
 				707CB97214E58257004431B2 /* AppDelegate.m */,
 				707CB97414E58257004431B2 /* ViewController.h */,
@@ -155,6 +162,7 @@
 			files = (
 				707CB96D14E58257004431B2 /* InfoPlist.strings in Resources */,
 				707CB97914E58257004431B2 /* ViewController.xib in Resources */,
+				707CB99714E67FFB004431B2 /* CB.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +286,7 @@
 				707CB97E14E58257004431B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

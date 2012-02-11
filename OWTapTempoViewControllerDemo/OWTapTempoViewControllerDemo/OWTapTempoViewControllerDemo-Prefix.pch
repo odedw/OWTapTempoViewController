@@ -12,3 +12,9 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+#define StartAnimationBlock(duration) CGContextRef context = UIGraphicsGetCurrentContext();\
+[UIView beginAnimations:nil context:context];\
+[UIView setAnimationDuration:duration]
+
+#define EndAnimationBlock() [UIView commitAnimations]
