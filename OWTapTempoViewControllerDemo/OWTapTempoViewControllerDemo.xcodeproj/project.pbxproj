@@ -18,6 +18,8 @@
 		707CB98114E58285004431B2 /* OWTapTempoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 707CB98014E58285004431B2 /* OWTapTempoViewController.m */; };
 		707CB99014E67D71004431B2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 707CB98F14E67D71004431B2 /* AudioToolbox.framework */; };
 		707CB99714E67FFB004431B2 /* CB.caf in Resources */ = {isa = PBXBuildFile; fileRef = 707CB99614E67FFB004431B2 /* CB.caf */; };
+		70CFC92514E850120085D8DD /* ModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70CFC92314E850120085D8DD /* ModalViewController.m */; };
+		70CFC92614E850120085D8DD /* ModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70CFC92414E850120085D8DD /* ModalViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,9 @@
 		707CB98014E58285004431B2 /* OWTapTempoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OWTapTempoViewController.m; path = ../../OWTapTempoViewController/OWTapTempoViewController.m; sourceTree = "<group>"; };
 		707CB98F14E67D71004431B2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		707CB99614E67FFB004431B2 /* CB.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CB.caf; sourceTree = "<group>"; };
+		70CFC92214E850120085D8DD /* ModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalViewController.h; sourceTree = "<group>"; };
+		70CFC92314E850120085D8DD /* ModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalViewController.m; sourceTree = "<group>"; };
+		70CFC92414E850120085D8DD /* ModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModalViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +97,9 @@
 				707CB97414E58257004431B2 /* ViewController.h */,
 				707CB97514E58257004431B2 /* ViewController.m */,
 				707CB97714E58257004431B2 /* ViewController.xib */,
+				70CFC92214E850120085D8DD /* ModalViewController.h */,
+				70CFC92314E850120085D8DD /* ModalViewController.m */,
+				70CFC92414E850120085D8DD /* ModalViewController.xib */,
 				707CB96914E58257004431B2 /* Supporting Files */,
 				707CB97F14E58285004431B2 /* OWTapTempoViewController.h */,
 				707CB98014E58285004431B2 /* OWTapTempoViewController.m */,
@@ -163,6 +171,7 @@
 				707CB96D14E58257004431B2 /* InfoPlist.strings in Resources */,
 				707CB97914E58257004431B2 /* ViewController.xib in Resources */,
 				707CB99714E67FFB004431B2 /* CB.caf in Resources */,
+				70CFC92614E850120085D8DD /* ModalViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +186,7 @@
 				707CB97314E58257004431B2 /* AppDelegate.m in Sources */,
 				707CB97614E58257004431B2 /* ViewController.m in Sources */,
 				707CB98114E58285004431B2 /* OWTapTempoViewController.m in Sources */,
+				70CFC92514E850120085D8DD /* ModalViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +261,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OWTapTempoViewControllerDemo/OWTapTempoViewControllerDemo-Prefix.pch";
 				INFOPLIST_FILE = "OWTapTempoViewControllerDemo/OWTapTempoViewControllerDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -262,6 +273,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OWTapTempoViewControllerDemo/OWTapTempoViewControllerDemo-Prefix.pch";
 				INFOPLIST_FILE = "OWTapTempoViewControllerDemo/OWTapTempoViewControllerDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
