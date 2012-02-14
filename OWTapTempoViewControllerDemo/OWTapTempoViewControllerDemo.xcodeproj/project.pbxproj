@@ -20,6 +20,7 @@
 		707CB99714E67FFB004431B2 /* CB.caf in Resources */ = {isa = PBXBuildFile; fileRef = 707CB99614E67FFB004431B2 /* CB.caf */; };
 		70CFC92514E850120085D8DD /* ModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70CFC92314E850120085D8DD /* ModalViewController.m */; };
 		70CFC92614E850120085D8DD /* ModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70CFC92414E850120085D8DD /* ModalViewController.xib */; };
+		70CFC93614EAB67F0085D8DD /* RoundBlueButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 70CFC93514EAB67F0085D8DD /* RoundBlueButton.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		70CFC92214E850120085D8DD /* ModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalViewController.h; sourceTree = "<group>"; };
 		70CFC92314E850120085D8DD /* ModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalViewController.m; sourceTree = "<group>"; };
 		70CFC92414E850120085D8DD /* ModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModalViewController.xib; sourceTree = "<group>"; };
+		70CFC93514EAB67F0085D8DD /* RoundBlueButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RoundBlueButton.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		707CB96814E58257004431B2 /* OWTapTempoViewControllerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				70CFC93514EAB67F0085D8DD /* RoundBlueButton.png */,
 				707CB99614E67FFB004431B2 /* CB.caf */,
 				707CB97114E58257004431B2 /* AppDelegate.h */,
 				707CB97214E58257004431B2 /* AppDelegate.m */,
@@ -172,6 +175,7 @@
 				707CB97914E58257004431B2 /* ViewController.xib in Resources */,
 				707CB99714E67FFB004431B2 /* CB.caf in Resources */,
 				70CFC92614E850120085D8DD /* ModalViewController.xib in Resources */,
+				70CFC93614EAB67F0085D8DD /* RoundBlueButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

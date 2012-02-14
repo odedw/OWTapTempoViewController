@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OWTapTempoViewController : UIViewController
-
+@interface OWTapTempoViewController : UIViewController {
+    UIButton *tapButton;
+    CGRect frame;
+    UIImage *image;
+    int currentBPM;
+}
+@property (readonly) int currentBPM;
+- (id)initWithFrame:(CGRect)frame andImage:(UIImage*)image;
+- (id)initWithFrame:(CGRect)frame;
 @end

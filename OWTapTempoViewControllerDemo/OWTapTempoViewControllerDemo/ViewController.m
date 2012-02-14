@@ -100,6 +100,12 @@
     [super dealloc];
 }
 - (IBAction)showTapTempo:(id)sender {
+    ModalViewController *modalViewController = [[ModalViewController alloc] init];
+    UINavigationController *navController = [[[UINavigationController alloc] initWithRootViewController:modalViewController] autorelease];
+    modalViewController.delegate = self;
+    [modalViewController release];
+    [self presentModalViewController:navController animated:YES];
+    
     
 }
 - (IBAction)sliderValueChanged:(id)sender {
@@ -111,6 +117,8 @@
     tfBPM.text = [NSString stringWithFormat:@"%d",bpm];
     
 }
+
+#pragma mark - Metronome logic
 
 - (IBAction)startStopTapped:(id)sender {
     isPlaying = !isPlaying;
@@ -169,7 +177,11 @@
     EndAnimationBlock();
 }
 
+#pragma mark - ModalViewControllerDelegate
 
-
+-(void)didSelectBpm:(int)val {
+    slider.value = val;
+    [self sliderValueChanged:slider];
+}
 
 @end

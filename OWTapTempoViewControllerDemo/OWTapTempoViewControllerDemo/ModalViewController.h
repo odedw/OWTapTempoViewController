@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OWTapTempoViewController.h"
+@protocol ModalViewControllerDelegate <NSObject>
+- (void)didSelectBpm:(int)bpm;
+@end
 
-@interface ModalViewController : UIViewController
-
+@interface ModalViewController : UIViewController {
+    id<ModalViewControllerDelegate> delegate;
+    OWTapTempoViewController *tapTempoViewController;
+}
+@property (nonatomic, assign) id<ModalViewControllerDelegate> delegate;
 @end

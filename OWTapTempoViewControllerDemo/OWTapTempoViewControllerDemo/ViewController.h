@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <AudioToolbox/AudioToolbox.h>
-@interface ViewController : UIViewController {
+#import "ModalViewController.h"
+@interface ViewController : UIViewController <ModalViewControllerDelegate> {
     BOOL isPlaying;
     SystemSoundID tickSound;
     int bpm;
