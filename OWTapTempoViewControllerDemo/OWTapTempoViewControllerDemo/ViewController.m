@@ -7,12 +7,14 @@
 //
 
 #import "ViewController.h"
+#import "OWTapTempoViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #define MAX_BPM 200
 #define MIN_BPM 30
 
 @implementation ViewController
 
+@synthesize lblTempoMarking;
 @synthesize switchEnableFlash;
 @synthesize flashView;
 @synthesize tfBPM;
@@ -58,6 +60,7 @@
     [self setMaskView:nil];
     [self setFlashView:nil];
     [self setSwitchEnableFlash:nil];
+    [self setLblTempoMarking:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -97,6 +100,7 @@
     AudioServicesDisposeSystemSoundID(tickSound);
     [flashView release];
     [switchEnableFlash release];
+    [lblTempoMarking release];
     [super dealloc];
 }
 - (IBAction)showTapTempo:(id)sender {
@@ -115,6 +119,7 @@
 - (void) setTextFieldValueFromSlider {
     bpm = round(slider.value);
     tfBPM.text = [NSString stringWithFormat:@"%d",bpm];
+    lblTempoMarking.text = [OWTapTempoViewController tempoMarkingForBpm:bpm];
     
 }
 

@@ -12,9 +12,11 @@
 - (void)didSelectBpm:(int)bpm;
 @end
 
-@interface ModalViewController : UIViewController {
+@interface ModalViewController : UIViewController <OWTapTempoViewControllerDelegate>{
     id<ModalViewControllerDelegate> delegate;
     OWTapTempoViewController *tapTempoViewController;
+    IBOutlet UITextField *tfBpm;
+    IBOutlet UILabel *lblTempoMarking;
 }
 @property (nonatomic, assign) id<ModalViewControllerDelegate> delegate;
 @end

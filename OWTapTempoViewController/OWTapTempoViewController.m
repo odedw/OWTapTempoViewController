@@ -7,9 +7,10 @@
 //
 
 #import "OWTapTempoViewController.h"
-
+#define MIN_BPM 20
 @implementation OWTapTempoViewController
-@synthesize currentBPM;
+@synthesize currentBpm, currentTempoMarking;
+@synthesize delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -40,6 +41,8 @@
 
 - (void)dealloc {
     [image release];
+    delegate = nil;
+    [tapDates release];
     [super dealloc];
 }
 
@@ -76,6 +79,8 @@
     [view addSubview:btn];
     self.view = view;
     [view release];
+    
+    tapDates = [[NSMutableArray alloc] init ];
 }
 
 
@@ -100,8 +105,83 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+#pragma mark - Bpm Logic
+
 -(void) tapped:(id)sender {
-    NSLog(@"tapped");
+    [tapDates addObject:[NSDate date]];
+    if (tapDates.count > 1)
+        [self computeCurrentBpm];
+    if (timer) {
+        [timer invalidate];
+        [timer release];
+        timer = nil;
+    }
+    float interval = (60.0/(float)MIN_BPM);
+    timer = [[NSTimer scheduledTimerWithTimeInterval:interval target:self selector:@selector(timerElapsed:) userInfo:nil repeats:NO] retain];
+}
+
+- (void)timerElapsed:(NSTimer*)thisTimer {
+    [tapDates removeAllObjects];
+    [timer invalidate];
+    [timer release];
+    timer = nil;
+}
+
+- (void)computeCurrentBpm {
+    float total = 0;
+    for (int i=0; i<tapDates.count-1; i++) {
+        NSDate *date1 = [tapDates objectAtIndex:i];
+        NSDate *date2 = [tapDates objectAtIndex:i+1];
+        total += [date2 timeIntervalSinceDate:date1];
+    }
+    float average = total / (float)(tapDates.count-1);
+    currentBpm = round(60.0/average);
+    [delegate controllerDidUpdateBpm:currentBpm];
+}
+
+#pragma mark - Tempo Marking
+- (NSString*)currentTempoMarking {
+    return [OWTapTempoViewController tempoMarkingForBpm:currentBpm];
+}
+
++ (NSString*)tempoMarkingForBpm:(int)bpm {
+    if (bpm <= 40)
+        return @"Largamente";
+    else if (bpm <= 45)
+        return @"Grave";
+    else if (bpm <= 51)
+        return @"Largo";
+    else if (bpm <= 55)
+        return @"Lento";
+    else if (bpm <= 59)
+        return @"Adagio";
+    else if (bpm <= 65)
+        return @"Larghetto";
+    else if (bpm <= 71)
+        return @"Adagietto";
+    else if (bpm <= 79)
+        return @"Andante";
+    else if (bpm <= 87)
+        return @"Andantino";
+    else if (bpm <= 95)
+        return @"Maestoso";
+    else if (bpm <= 107)
+        return @"Moderato";
+    else if (bpm <= 119)
+        return @"Allegretto";
+    else if (bpm <= 131)
+        return @"Animato";
+    else if (bpm <= 143)
+        return @"Allegro";
+    else if (bpm <= 159)
+        return @"Vivace";
+    else if (bpm <= 191)
+        return @"Presto";
+    else if (bpm <= 207)
+        return @"Vivacissimo";
+    else 
+        return @"Prestissimo";
+    
 }
 
 @end

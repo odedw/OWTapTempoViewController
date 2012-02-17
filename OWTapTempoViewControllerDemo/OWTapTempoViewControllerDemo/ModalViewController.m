@@ -25,6 +25,8 @@
 - (void)dealloc {
     delegate = nil;
     [tapTempoViewController release];
+    [tfBpm release];
+    [lblTempoMarking release];
     [super dealloc];
 }
 - (void)didReceiveMemoryWarning
@@ -52,12 +54,17 @@
     
     //init OWTapTempoViewController
     tapTempoViewController = [[OWTapTempoViewController alloc] initWithFrame:CGRectMake(0, 0, 150, 150) andImage:[UIImage imageNamed:@"RoundBlueButton"]];
+    tapTempoViewController.delegate = self;
     [self.view addSubview:tapTempoViewController.view];
     tapTempoViewController.view.center = self.view.center;
 }
 
 - (void)viewDidUnload
 {
+    [tfBpm release];
+    tfBpm = nil;
+    [lblTempoMarking release];
+    lblTempoMarking = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -74,9 +81,16 @@
 }
 
 - (void)done:(id)sender {
-    [delegate didSelectBpm:150];
+    [delegate didSelectBpm:tapTempoViewController.currentBpm];
     [self dismissModalViewControllerAnimated:YES];
-    
 }
+
+#pragma mark - OWTapTempoViewControllerDelegate methods
+
+- (void)controllerDidUpdateBpm:(int)bpm {
+    tfBpm.text = [NSString stringWithFormat:@"%d",bpm];
+    lblTempoMarking.text = tapTempoViewController.currentTempoMarking;
+}
+
 
 @end

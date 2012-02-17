@@ -16,6 +16,7 @@
     int count;
     
 }
+@property (retain, nonatomic) IBOutlet UILabel *lblTempoMarking;
 @property (retain, nonatomic) IBOutlet UISwitch *switchEnableFlash;
 @property (retain, nonatomic) IBOutlet UIView *flashView;
 @property (retain, nonatomic) IBOutlet UITextField *tfBPM;
