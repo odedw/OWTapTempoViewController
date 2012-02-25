@@ -1,10 +1,26 @@
 //
 //  OWTapTempoViewController.m
-//  OWTapTempoViewControllerDemo
 //
 //  Created by Oded Welgreen on 10/02/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Oded Welgreen. All rights reserved.
 //
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
 
 #import "OWTapTempoViewController.h"
 #define MIN_BPM 20
@@ -122,20 +138,34 @@
 
 - (void)timerElapsed:(NSTimer*)thisTimer {
     [tapDates removeAllObjects];
+    lastAverage = 0;
     [timer invalidate];
     [timer release];
     timer = nil;
 }
 
 - (void)computeCurrentBpm {
+    //compare this interval to the last average
+    if (lastAverage > 0) {
+        NSDate *lastDate = [tapDates objectAtIndex:tapDates.count-1];
+        NSDate *oneBeforeLastDate = [tapDates objectAtIndex:tapDates.count-2];
+        float interval = [lastDate timeIntervalSinceDate:oneBeforeLastDate];
+        //if the difference between the last average and this interval is too big, chuck all the readings except for the last one
+        if (MAX(interval, lastAverage) / MIN(interval, lastAverage) > 1.5) { 
+            //remove all but the last two to start over
+            [tapDates removeObjectsInRange:NSMakeRange(0, tapDates.count-2)];
+        }
+            
+    }
+    
     float total = 0;
     for (int i=0; i<tapDates.count-1; i++) {
         NSDate *date1 = [tapDates objectAtIndex:i];
         NSDate *date2 = [tapDates objectAtIndex:i+1];
         total += [date2 timeIntervalSinceDate:date1];
     }
-    float average = total / (float)(tapDates.count-1);
-    currentBpm = round(60.0/average);
+    lastAverage = total / (float)(tapDates.count-1);
+    currentBpm = round(60.0/lastAverage);
     [delegate controllerDidUpdateBpm:currentBpm];
 }
 
@@ -179,7 +209,7 @@
         return @"Presto";
     else if (bpm <= 207)
         return @"Vivacissimo";
-    else 
+    else // > 207
         return @"Prestissimo";
     
 }
