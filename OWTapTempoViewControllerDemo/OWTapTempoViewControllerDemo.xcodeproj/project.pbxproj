@@ -21,6 +21,7 @@
 		70CFC92514E850120085D8DD /* ModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70CFC92314E850120085D8DD /* ModalViewController.m */; };
 		70CFC92614E850120085D8DD /* ModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70CFC92414E850120085D8DD /* ModalViewController.xib */; };
 		70CFC93614EAB67F0085D8DD /* RoundBlueButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 70CFC93514EAB67F0085D8DD /* RoundBlueButton.png */; };
+		70F1862114FEC3A700953420 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 70F1862014FEC3A700953420 /* README */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		70CFC92314E850120085D8DD /* ModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalViewController.m; sourceTree = "<group>"; };
 		70CFC92414E850120085D8DD /* ModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModalViewController.xib; sourceTree = "<group>"; };
 		70CFC93514EAB67F0085D8DD /* RoundBlueButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RoundBlueButton.png; sourceTree = "<group>"; };
+		70F1862014FEC3A700953420 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README; path = ../../README; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +95,6 @@
 		707CB96814E58257004431B2 /* OWTapTempoViewControllerDemo */ = {
 			isa = PBXGroup;
 			children = (
-				70CFC93514EAB67F0085D8DD /* RoundBlueButton.png */,
-				707CB99614E67FFB004431B2 /* CB.caf */,
 				707CB97114E58257004431B2 /* AppDelegate.h */,
 				707CB97214E58257004431B2 /* AppDelegate.m */,
 				707CB97414E58257004431B2 /* ViewController.h */,
@@ -113,6 +113,9 @@
 		707CB96914E58257004431B2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				70CFC93514EAB67F0085D8DD /* RoundBlueButton.png */,
+				707CB99614E67FFB004431B2 /* CB.caf */,
+				70F1862014FEC3A700953420 /* README */,
 				707CB96A14E58257004431B2 /* OWTapTempoViewControllerDemo-Info.plist */,
 				707CB96B14E58257004431B2 /* InfoPlist.strings */,
 				707CB96E14E58257004431B2 /* main.m */,
@@ -176,6 +179,7 @@
 				707CB99714E67FFB004431B2 /* CB.caf in Resources */,
 				70CFC92614E850120085D8DD /* ModalViewController.xib in Resources */,
 				70CFC93614EAB67F0085D8DD /* RoundBlueButton.png in Resources */,
+				70F1862114FEC3A700953420 /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
