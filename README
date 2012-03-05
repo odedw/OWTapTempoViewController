@@ -1,4 +1,4 @@
-Writing a music app and want to add a tap tempo feature? just drop the files in your project, create an instance of the controller and add it's view to your view!
+Writing a music app and want to add a tap tempo feature? just drop the files in your project, create an instance of the controller and add its view to your view!
 To get the current computed BPM just check the currentBpm property. Also available is the tempo marking of the current BPM and a class method to get the tempo marking for a certain BPM value. 
 
 There are two ways to init the controller:
